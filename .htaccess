@@ -1,0 +1,16 @@
+# .htaccess rules for download.phpmyfaq.de
+
+Options +FollowSymlinks -MultiViews -Indexes
+RewriteEngine On
+RewriteBase /
+
+RewriteRule phpMyFAQ-latest.zip             latest.php?branch=stable&ext=.zip
+RewriteRule phpMyFAQ-latest.tar.gz          latest.php?branch=stable&ext=.tar.gz
+RewriteRule phpMyFAQ-development.zip        latest.php?branch=development&ext=.zip
+RewriteRule phpMyFAQ-development.tar.gz     latest.php?branch=development&ext=.tar.gz
+
+RewriteRule phpMyFAQ-(.+).zip$              get.php?number=$1&ext=.zip
+RewriteRule phpMyFAQ-(.+).tar.gz$           get.php?number=$1&ext=.tar.gz
+RewriteRule phpmyfaq-(.+)&version=(.+)      get.php?number=$1&version=$2&ext=.zip
+
+RewriteRule filesize/(.+)                   filesize.php?version=$1

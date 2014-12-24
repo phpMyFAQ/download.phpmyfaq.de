@@ -1,0 +1,4 @@
+# Database configuration
+config/sql.php
+# Downloads
+files/
