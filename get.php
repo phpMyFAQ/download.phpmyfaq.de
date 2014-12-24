@@ -27,12 +27,12 @@ switch ($extension) {
 require 'config/sql.php';
 
 try {
-    $version = $versionNumber . ' ' . $versionBranch;
-    $dsn     = 'mysql:host=' . $db['server'] . ';dbname=' . $db['name'];
+    $storedVersion = $versionNumber . ' ' . $versionBranch;
+    $dsn = 'mysql:host=' . $db['server'] . ';dbname=' . $db['name'];
 
     $conn = new PDO($dsn, $db['user'], $db['pw']);
     $stmt = $conn->prepare('INSERT INTO phpmyfaqkunden (version) VALUES :version');
-    $stmt->bindParam('version', $version, PDO::PARAM_STR);
+    $stmt->bindParam('version', $storedVersion, PDO::PARAM_STR);
     $stmt->execute();
 
 } catch (PDOException $e) {
