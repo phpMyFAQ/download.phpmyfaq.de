@@ -13,5 +13,8 @@ RewriteRule phpMyFAQ-(.+).zip$              get.php?number=$1&ext=.zip
 RewriteRule phpMyFAQ-(.+).tar.gz$           get.php?number=$1&ext=.tar.gz
 RewriteRule phpmyfaq-(.+)&version=(.+)      get.php?number=$1&version=$2&ext=.zip
 
+RewriteRule phpMyFAQ-(.+).zip.md5$          files/phpmyfaq-$1.zip.md5
+RewriteRule phpMyFAQ-(.+).tar.gz.md5$       files/phpmyfaq-$1.tar.gz.md5
+
 RewriteRule filesize/(.+)                   filesize.php?version=$1
 RewriteRule info/(.+)                       info.php?version=$1
