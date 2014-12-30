@@ -1,0 +1,6 @@
+<?php
+// Add your credentials and rename file to sql.php
+$db['server'] = '';
+$db['user']   = '';
+$db['pw']     = '';
+$db['name']   = '';
