@@ -1,4 +1,6 @@
 # Database configuration
 config/sql.php
 # Downloads
-files/
+files/*.zip
+files/*.tar.gz
+files/*.md5
