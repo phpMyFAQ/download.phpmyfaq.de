@@ -1,20 +1,33 @@
-# .htaccess rules for download.phpmyfaq.de
-
 Options +FollowSymlinks -MultiViews -Indexes
-RewriteEngine On
-RewriteBase /
 
-RewriteRule phpMyFAQ-latest.zip             latest.php?branch=stable&ext=.zip
-RewriteRule phpMyFAQ-latest.tar.gz          latest.php?branch=stable&ext=.tar.gz
-RewriteRule phpMyFAQ-development.zip        latest.php?branch=development&ext=.zip
-RewriteRule phpMyFAQ-development.tar.gz     latest.php?branch=development&ext=.tar.gz
+# ----------------------------------------------------------------------
+# | Cross-origin requests for download.phpmyfaq.de                     |
+# ----------------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
 
-RewriteRule phpMyFAQ-(.+).zip$              get.php?number=$1&ext=.zip
-RewriteRule phpMyFAQ-(.+).tar.gz$           get.php?number=$1&ext=.tar.gz
-RewriteRule phpmyfaq-(.+)&version=(.+)      get.php?number=$1&version=$2&ext=.zip
+# ----------------------------------------------------------------------
+# | Rewrite rules for download.phpmyfaq.de                             |
+# ----------------------------------------------------------------------
+<IfModule mod_rewrite.c>
 
-RewriteRule phpMyFAQ-(.+).zip.md5$          files/phpmyfaq-$1.zip.md5
-RewriteRule phpMyFAQ-(.+).tar.gz.md5$       files/phpmyfaq-$1.tar.gz.md5
+    RewriteEngine On
+    RewriteBase /
 
-RewriteRule filesize/(.+)                   filesize.php?version=$1
-RewriteRule info/(.+)                       info.php?version=$1
+    RewriteRule phpMyFAQ-latest.zip             latest.php?branch=stable&ext=.zip
+    RewriteRule phpMyFAQ-latest.tar.gz          latest.php?branch=stable&ext=.tar.gz
+    RewriteRule phpMyFAQ-development.zip        latest.php?branch=development&ext=.zip
+    RewriteRule phpMyFAQ-development.tar.gz     latest.php?branch=development&ext=.tar.gz
+
+    RewriteRule phpMyFAQ-(.+).zip$              get.php?number=$1&ext=.zip
+    RewriteRule phpMyFAQ-(.+).tar.gz$           get.php?number=$1&ext=.tar.gz
+    RewriteRule phpmyfaq-(.+)&version=(.+)      get.php?number=$1&version=$2&ext=.zip
+
+    RewriteRule phpMyFAQ-(.+).zip.md5$          files/phpmyfaq-$1.zip.md5
+    RewriteRule phpMyFAQ-(.+).tar.gz.md5$       files/phpmyfaq-$1.tar.gz.md5
+
+    RewriteRule filesize/(.+)                   filesize.php?version=$1
+    RewriteRule info/(.+)                       info.php?version=$1
+
+</IfModule>
