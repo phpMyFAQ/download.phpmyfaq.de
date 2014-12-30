@@ -11,15 +11,24 @@
 ob_start('ob_gzhandler');
 header('Content-type: application/json');
 
-$version = filter_input(INPUT_GET, 'version', FILTER_SANITIZE_STRING);
+$version  = filter_input(INPUT_GET, 'version', FILTER_SANITIZE_STRING);
+$filename = 'phpmyfaq-' . $version . '.zip';
 
-if (null === $version) {
-    die('No version, no filesize');
+if (preg_match('((\d+)\.(\d+)(\.\d+)?(-(beta|alpha|rc)(\d+))?)', $version) && file_exists($fileName)) {
+
+    echo json_encode(
+        [
+            'phpMyFAQ ' . $version => round(filesize('files/phpmyfaq-' . $version . '.zip') / 1024 / 1024, 2)
+        ]
+    );
+
+} else {
+
+    header("HTTP/1.0 418 I'm a teapot");
+    echo json_encode(
+        'The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.'
+    );
+
 }
 
-echo json_encode(
-    [
-        'phpMyFAQ ' . $version => round(filesize('files/phpmyfaq-' . $version . '.zip') / 1024 / 1024, 2)
-    ]
-);
 exit();
