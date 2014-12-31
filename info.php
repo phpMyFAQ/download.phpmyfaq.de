@@ -18,12 +18,12 @@ $fileNameGz  = 'files/phpmyfaq-' . $version . '.tar.gz';
 if (preg_match('((\d+)\.(\d+)(\.\d+)?(-(beta|alpha|rc)(\d+))?)', $version) && file_exists($fileNameZip) && file_exists($fileNameGz)) {
 
     $infoData = [
-        'version'  => $version,
-        'zip'      => [
+        'version' => $version,
+        'zip'     => [
             'filesize' => round(filesize($fileNameZip) / 1024 / 1024, 2),
             'md5'      => md5_file($fileNameZip)
         ],
-        'tar.gz'   => [
+        'targz'   => [
             'filesize' => round(filesize($fileNameGz) / 1024 / 1024, 2),
             'md5'      => md5_file($fileNameGz)
         ]
