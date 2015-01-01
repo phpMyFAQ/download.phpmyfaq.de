@@ -27,7 +27,7 @@ Example JSON Response for version 2.8.18:
             "filesize": 6.1,
             "md5": "f3b3ee1925ec778d7fcad3e3846a48cd"
         },
-        "tar.gz": {
+        "targz": {
             "filesize": 5.42,
             "md5": "84c82f328c973de0c850abd72e9586d3"
         }
@@ -40,4 +40,4 @@ The value of the filesize are MBytes.
 
 Mozilla Public License 2.0, see LICENSE.md for more information.
 
-Copyright (c) 2014 Thorsten Rinne
+Copyright (c) 2014-2015 Thorsten Rinne
