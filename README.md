@@ -4,7 +4,7 @@ This subdomain handles the downloads of phpMyFAQ releases from [phpMyFAQ](https:
 
 ## Public API endpoints
 
-### https://download.phpmyfaq.de/filesize/&lt;version&gt;
+### download.phpmyfaq.de/filesize/&lt;version&gt;
 
 Example JSON Response for version 2.8.18:
 
@@ -16,7 +16,7 @@ Example JSON Response for version 2.8.18:
 The value of the version key is the filesize of the .zip package in MBytes.
     
 
-### https://download.phpmyfaq.de/info/&lt;version&gt;
+### download.phpmyfaq.de/info/&lt;version&gt;
 
 Example JSON Response for version 2.8.18:
 
