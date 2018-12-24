@@ -1,10 +1,10 @@
 # download.phpmyfaq.de
 
-This subdomain handles the downloads of phpMyFAQ releases from [phpMyFAQ](http://www.phpmyfaq.de).
+This subdomain handles the downloads of phpMyFAQ releases from [phpMyFAQ](https://www.phpmyfaq.de).
 
-## API endpoints
+## Public API endpoints
 
-### download.phpmyfaq.de/filesize/&lt;version&gt;
+### https://download.phpmyfaq.de/filesize/&lt;version&gt;
 
 Example JSON Response for version 2.8.18:
 
@@ -16,7 +16,7 @@ Example JSON Response for version 2.8.18:
 The value of the version key is the filesize of the .zip package in MBytes.
     
 
-### download.phpmyfaq.de/info/&lt;version&gt;
+### https://download.phpmyfaq.de/info/&lt;version&gt;
 
 Example JSON Response for version 2.8.18:
 
@@ -40,4 +40,4 @@ The value of the filesize are MBytes.
 
 Mozilla Public License 2.0, see LICENSE.md for more information.
 
-Copyright (c) 2014-2015 Thorsten Rinne
+Copyright (c) 2014-2019 Thorsten Rinne
