@@ -5,5 +5,5 @@
  *
  */
 
-header('Location: http://www.phpmyfaq.de/download', false, 301);
+header('Location: https://www.phpmyfaq.de/download', false, 301);
 exit;
