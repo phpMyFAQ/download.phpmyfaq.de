@@ -48,7 +48,7 @@ if (version_compare($versionNumber, '1.6.3', '<')) {
 
 if (file_exists('files/phpmyfaq' . $part . $versionNumber . $version . $extension)) {
 
-    header('Location: http://download.phpmyfaq.de/files/phpmyfaq' . $part . $versionNumber . $version . $extension);
+    header('Location: https://download.phpmyfaq.de/files/phpmyfaq' . $part . $versionNumber . $version . $extension);
     exit();
 
 } else {
