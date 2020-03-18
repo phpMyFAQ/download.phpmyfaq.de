@@ -2,7 +2,7 @@
 
 This subdomain handles the downloads of phpMyFAQ releases from [phpMyFAQ](https://www.phpmyfaq.de).
 
-## API endpoints
+## Public API endpoints
 
 ### download.phpmyfaq.de/filesize/&lt;version&gt;
 
