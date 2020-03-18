@@ -1,10 +1,10 @@
 <?php
 /**
- * Returns the filesize of the given version as JSON
+ * Returns the file size of the given version as JSON
  *
- * Example: http://download.phpmyfaq.de/filesize/2.8.18
+ * Example: https://download.phpmyfaq.de/filesize/3.0.1
  *
- * Returns: { "phpMyFAQ 2.8.18": 6.1 }
+ * Returns: { "phpMyFAQ 3.0.1": 6.1 }
  *
  */
 

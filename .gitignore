@@ -1,5 +1,3 @@
-# Database configuration
-config/sql.php
 # Downloads
 files/*.zip
 files/*.tar.gz

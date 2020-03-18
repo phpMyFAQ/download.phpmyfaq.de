@@ -24,35 +24,19 @@ switch ($extension) {
         break;
 }
 
-require 'config/sql.php';
-
-try {
-    $storedVersion = trim($versionNumber . ' ' . $versionBranch);
-    $dsn = 'mysql:host=' . $db['server'] . ';dbname=' . $db['name'];
-
-    $conn = new PDO($dsn, $db['user'], $db['pw']);
-    $stmt = $conn->prepare('INSERT INTO phpmyfaqkunden (version) VALUES (:version)');
-    $stmt->bindParam('version', $storedVersion);
-    $stmt->execute();
-
-} catch (PDOException $e) {
-    echo 'Error: ' . $e->getMessage();
-    exit();
-}
-
 if (version_compare($versionNumber, '1.6.3', '<')) {
     $part = '.';
 } else {
     $part = '-';
 }
 
-if (file_exists('files/phpmyfaq' . $part . $versionNumber . $version . $extension)) {
+$fileName = 'files/phpmyfaq' . $part . $versionNumber . $version . $extension;
 
-    header('Location: http://download.phpmyfaq.de/files/phpmyfaq' . $part . $versionNumber . $version . $extension);
+if (file_exists($fileName)) {
+    header('Last-Modified: '.gmdate('D, d M Y H:i:s', filemtime($fileName)).' GMT', true, 200);
+    header('Content-Length: '.filesize($fileName));
+    header('Location: https://download.phpmyfaq.de/' . $fileName);
     exit();
-
 } else {
-
     die('No file, no download');
-
 }

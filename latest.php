@@ -4,13 +4,13 @@
  *
  * Example:
  *
- * - http://download.phpmyfaq.de/latest/zip
- * - http://download.phpmyfaq.de/latest/tar.gz
- * - http://download.phpmyfaq.de/latest-development/zip
- * - http://download.phpmyfaq.de/latest-development/tar.gz
+ * - https://download.phpmyfaq.de/latest/zip
+ * - https://download.phpmyfaq.de/latest/tar.gz
+ * - https://download.phpmyfaq.de/latest-development/zip
+ * - https://download.phpmyfaq.de/latest-development/tar.gz
  */
 
-$versions = json_decode(file_get_contents('http://api.phpmyfaq.de/versions'));
+$versions = json_decode(file_get_contents('https://api.phpmyfaq.de/versions'));
 $branch   = filter_input(INPUT_GET, 'branch', FILTER_SANITIZE_STRIPPED);
 $ext      = filter_input(INPUT_GET, 'ext', FILTER_SANITIZE_STRIPPED);
 
