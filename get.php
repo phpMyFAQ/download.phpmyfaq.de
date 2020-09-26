@@ -34,8 +34,17 @@ $fileName = 'files/phpmyfaq' . $part . $versionNumber . $version . $extension;
 
 if (file_exists($fileName)) {
     header('Last-Modified: '.gmdate('D, d M Y H:i:s', filemtime($fileName)).' GMT', true, 200);
+    header('Pragma: public');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+    header('Cache-Control: public');
+    header('Content-Description: File Transfer');
+    header('Content-type: application/octet-stream');
+    header('Content-Disposition: attachment; filename="'.$fileName.'"');
+    header("Content-Transfer-Encoding: binary");
     header('Content-Length: '.filesize($fileName));
-    header('Location: https://download.phpmyfaq.de/' . $fileName);
+    ob_end_flush();
+    @readfile($fileName);
     exit();
 } else {
     die('No file, no download');
