@@ -1,3 +1,6 @@
+# ----------------------------------------------------------------------
+# | Options for Apache                                                 |
+# ----------------------------------------------------------------------
 Options +FollowSymlinks -MultiViews -Indexes
 
 # ----------------------------------------------------------------------
@@ -7,9 +10,8 @@ Options +FollowSymlinks -MultiViews -Indexes
     Header set Access-Control-Allow-Origin "*"
 </IfModule>
 
-
 # ----------------------------------------------------------------------
-# | Add mime types for download.phpmyfaq.de                     |
+# | Add mime types for download.phpmyfaq.de                            |
 # ----------------------------------------------------------------------
 AddType application/zip .zip
 AddType application/x-gzip .gz

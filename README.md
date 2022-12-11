@@ -9,7 +9,6 @@ This subdomain handles the downloads of phpMyFAQ releases from [phpMyFAQ](https:
 Example JSON Response for version 3.0.1:
 
     {
-
         "3.0.1": "7.6"
     }
 
@@ -21,7 +20,6 @@ The value of the version key is the filesize of the .zip package in MBytes.
 Example JSON Response for version 3.0.1:
 
     {
-
         "version": "3.0.1",
         "zip": {
             "filesize": 7.6,
@@ -40,4 +38,4 @@ The value of the file size are MBytes.
 
 Mozilla Public License 2.0, see LICENSE.md for more information.
 
-Copyright &copy; 2014-2020 Thorsten Rinne
+Copyright &copy; 2014-2022 Thorsten Rinne

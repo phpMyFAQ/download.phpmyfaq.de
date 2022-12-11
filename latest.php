@@ -11,8 +11,8 @@
  */
 
 $versions = json_decode(file_get_contents('https://api.phpmyfaq.de/versions'));
-$branch   = filter_input(INPUT_GET, 'branch', FILTER_SANITIZE_STRIPPED);
-$ext      = filter_input(INPUT_GET, 'ext', FILTER_SANITIZE_STRIPPED);
+$branch   = filter_input(INPUT_GET, 'branch', FILTER_SANITIZE_ADD_SLASHES);
+$ext      = filter_input(INPUT_GET, 'ext', FILTER_SANITIZE_ADD_SLASHES);
 
 switch ($branch) {
     case 'development':

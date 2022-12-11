@@ -11,10 +11,10 @@
 ob_start('ob_gzhandler');
 header('Content-type: application/json');
 
-$version  = filter_input(INPUT_GET, 'version', FILTER_SANITIZE_STRING);
+$version  = filter_input(INPUT_GET, 'version', FILTER_SANITIZE_ADD_SLASHES);
 $fileName = 'files/phpmyfaq-' . $version . '.zip';
 
-if (preg_match('((\d+)\.(\d+)(\.\d+)?(-(beta|alpha|rc)(\d+))?)', $version) && file_exists($fileName)) {
+if ($version && preg_match('((\d+)\.(\d+)(\.\d+)?(-(beta|alpha|rc)(\d+))?)', $version) && file_exists($fileName)) {
 
     echo json_encode(
         [
