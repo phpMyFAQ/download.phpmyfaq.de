@@ -44,11 +44,11 @@ if (file_exists($fileLocation)) {
     header('Content-Disposition: attachment; filename="'.$fileName.'"');
     header("Content-Transfer-Encoding: binary");
     header('Content-Length: '.filesize($fileLocation));
-    http_send_status(200);
+    http_response_code(200);
     ob_end_flush();
     @readfile($fileLocation);
     exit();
 } else {
-    http_send_status(404);
+    http_response_code(404);
     die('No file, no download');
 }
